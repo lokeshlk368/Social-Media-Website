@@ -1,8 +1,13 @@
 // Requrire the express
 const express=require('express');
+const cookieParser=require('cookie-parser');
+
 const app=express();
 const port=8000;
 
+
+app.use(express.urlencoded());
+app.use(cookieParser());
 //Use Layout Library
 
 const expresslayouts=require('express-ejs-layouts');
@@ -12,6 +17,8 @@ app.set('layout extractScripts',true);
 
 // Use express router
 app.use('/',require('./routes'));
+
+
 
 // Setup view engine
 app.set('view engine','ejs');
