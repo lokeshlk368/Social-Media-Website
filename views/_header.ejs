@@ -1,11 +1,21 @@
-  <header>
-            page header
-        </header> 
+  <header id="layout-header">
+    <nav>
+      <div class="mini-logo">
+        <p>
+          <a href="#">Meetup
+            </a>
+        </p>
+        </div>
 
+        <div class="auth-links">
         <ul>
             <% if(locals.user){ %>
-              <li><%=user.name %></li>
               <li>
+                <a href="/users/profile">
+                <%=user.name %></li>
+                </a>
+              <li>
+
                 <a href="/users/sign-out">Sign Out</a>
                 </li>
 
@@ -19,5 +29,9 @@
                   </li>
 
          <% } %>
+         
 
         </ul>
+        </div>
+     </nav>
+  </header>

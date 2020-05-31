@@ -8,6 +8,18 @@ const port=8000;
 
 app.use(express.urlencoded());
 app.use(cookieParser());
+
+// Use SASS Library
+const sassMiddleware=require('node-sass-middleware');
+app.use(sassMiddleware({
+      src:'./assets/scss',
+      dest:'./assets/css',
+      debug:true,
+      outputStyle:'extended',
+      prefix:'/css'
+})); 
+
+
 //Use Layout Library
 
 const expresslayouts=require('express-ejs-layouts');
